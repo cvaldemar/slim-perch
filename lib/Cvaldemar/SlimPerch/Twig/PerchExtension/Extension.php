@@ -1,6 +1,6 @@
 <?php
 
-namespace Cvaldemar\Twig\PerchExtension;
+namespace Cvaldemar\SlimPerch\Twig\PerchExtension;
 
 class Extension extends \Twig_Extension
 {
