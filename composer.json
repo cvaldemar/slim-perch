@@ -16,9 +16,8 @@
         "twig/twig": "1.*"
     },
     "autoload": {
-        "psr-0": [{ 
-          "Cvaldemar\\SlimPerch\\": "lib/",
-          "Cvaldemar\\SlimPerch\\Twig\\PerchExtension\\": "lib/" 
-        }]
+        "psr-0": { 
+          "Cvaldemar\\SlimPerch\\": "lib/"
+        }
     }
 }
