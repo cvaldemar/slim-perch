@@ -11,6 +11,7 @@ class Extension extends \Twig_Extension
 			'perch_location' => new \Twig_Function_Method($this, 'location'),
             'perch_content_create' => new \Twig_Function_Method($this, 'content_create'),
             'perch_content_custom' => new \Twig_Function_Method($this, 'content_custom'),
+            'perch_content_search' => new \Twig_Function_Method($this, 'content_search'),
 		);
 	}
 
@@ -32,6 +33,11 @@ class Extension extends \Twig_Extension
     public function content_custom($opts, $return)
     {
         return perch_content_custom($opts, $return);
+    }
+
+    public function content_search($key, $opts)
+    {
+        return perch_content_search($key, $opts);
     }
 
 	public function getName()
