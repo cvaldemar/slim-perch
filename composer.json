@@ -1,7 +1,7 @@
 {
     "name": "cvaldemar/slim-perch",
     "description": "Perch integration for Slim.",
-    "keywords": ["slim", "perch"],
+    "keywords": ["slim", "perch", "twig"],
     "homepage": "https://github.com/cvaldemar/slim-perch",
     "type": "library",
     "license": "MIT",
