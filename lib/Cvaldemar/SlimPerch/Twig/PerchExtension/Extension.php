@@ -42,7 +42,7 @@ class Extension extends \Twig_Extension
         return perch_content_search($key, $opts);
     }
 
-    public function pages_navigation($opts)
+    public function pages_navigation($opts = array())
     {
         return perch_pages_navigation($opts);
     }
