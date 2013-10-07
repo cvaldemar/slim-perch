@@ -53,7 +53,7 @@ class Extension extends \Twig_Extension
         return perch_pages_navigation_text($opts);
     }
 
-    public function pages_breadcrumb($opts = array())
+    public function pages_breadcrumbs($opts = array())
     {
         return perch_pages_breadcrumbs($opts);
     }
