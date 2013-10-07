@@ -14,6 +14,7 @@ class Extension extends \Twig_Extension
             'perch_content_search' => new \Twig_Function_Method($this, 'content_search'),
             'perch_pages_navigation' => new \Twig_Function_Method($this, 'pages_navigation'),
             'perch_pages_navigation_text' => new \Twig_Function_Method($this, 'pages_navigation_text'),
+            'perch_pages_breadcrumbs' => new \Twig_Function_Method($this, 'pages_breadcrumbs'),
 		);
 	}
 
@@ -47,9 +48,14 @@ class Extension extends \Twig_Extension
         return perch_pages_navigation($opts);
     }
 
-    public function pages_navigation_text()
+    public function pages_navigation_text($opts = false)
     {
-        return perch_pages_navigation_text();
+        return perch_pages_navigation_text($opts);
+    }
+
+    public function pages_breadcrumb($opts = array())
+    {
+        return perch_pages_breadcrumbs($opts);
     }
 
 	public function getName()
