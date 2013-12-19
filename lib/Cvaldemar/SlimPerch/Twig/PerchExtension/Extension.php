@@ -4,6 +4,9 @@ namespace Cvaldemar\SlimPerch\Twig\PerchExtension;
 
 class Extension extends \Twig_Extension
 {
+
+    protected $blankImgData = 'data:image/gif;base64,R0lGODlhIAAgAOMJAMzMzJaWlre3t5ycnL6+vsXFxaOjo7Gxsaqqqv///////////////////////////yH+EUNyZWF0ZWQgd2l0aCBHSU1QACwAAAAAIAAgAAAEIhDISau9OOvNu/9gKI5kaZ5oqq5s675wLM90bd94ru+8HAEAOw==';
+
     /**
      * Functions
      * @return array
@@ -75,8 +78,15 @@ class Extension extends \Twig_Extension
 
     public function perchsize($path, $width = 200, $height = 100)
     {
+        if (!$path)  return $this->blankImgData;
+
         $p = pathinfo($path);
-        return $p['dirname'] . '/' . $p['filename'] . '-w' . $width . 'h' . $height . '.' . $p['extension'];
+
+        $dirname = array_key_exists('dirname', $p) ? $p['dirname'] : '';
+        $filename = array_key_exists('filename', $p) ? $p['filename'] : '';
+        $extension = array_key_exists('extension', $p) ? $p['extension'] : '';
+
+        return $dirname . '/' . $filename . '-w' . $width . 'h' . $height . '.' . $extension;
     }
 
 	public function getName()
